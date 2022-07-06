@@ -2,8 +2,7 @@ import './index.css';
 import { useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import AuthApi from './AuthApi';
-
-// import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie';
 
 const Login = () => {
     const nav = useNavigate();
@@ -15,9 +14,8 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         Auth.setAuth(true);
+        Cookies.set('user','loginTrue')
         nav('/Dashboard');
-        // setCookie('Name', userName, { path: '/'});
-        // setCookie('Password', password, { path: '/'});
     }
 
     return (
