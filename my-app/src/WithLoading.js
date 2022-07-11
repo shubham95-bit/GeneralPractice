@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import useUsersList from "./useUsersList";
 
 const WithLoading = (Component) => {
@@ -8,7 +7,9 @@ const WithLoading = (Component) => {
         if(!isLoading){
             return <Component userData={userData}/>
         }
-        return <h1 className="container text-align">Please hold while the data is being fetched</h1>
+        return <div className="App">
+                    <h1 className="container-fluid text-center">Please hold while the data is being fetched</h1>
+                </div>
     }
 }
 

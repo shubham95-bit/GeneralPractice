@@ -6,7 +6,6 @@ const useUsersList = () => {
 
     const fetchUserList = () => {
         fetch('https://jsonplaceholder.typicode.com/users/').then((result)=>{
-            console.log(result);
             return result.json();
         }).then((response)=>{
             setUserData([...response]);   
